@@ -1,0 +1,8 @@
+name = "MyPackage"
+uuid = "1dc12085-c18b-4ed0-a702-886d45bb4424"
+authors = ["lecture "]
+version = "0.1.0"
+
+[deps]
+Plots = "91a5bcdd-55d7-5caf-9e0b-520d859cae80"
+Revise = "295af30f-e4ad-537b-8983-00126c2a3abe"
