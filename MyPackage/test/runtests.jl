@@ -1,4 +1,4 @@
-import MyPackage: myiseven
+import MyPackage: myiseven, bisect
 using Test
 
 @testset "myiseven" begin
@@ -9,6 +9,17 @@ using Test
     for i in 1:10
         @test myiseven(i) == (i % 2 == 0)
     end
+end
+
+@testset "bisect" begin
+    tol = 1e-12
+
+    f(x) = x - 1.0
+    # atol = aboslute tolerance
+    @test isapprox(bisect(f, 0.0, 3.0, tol), 1.0, atol=tol)
+    
+    f(x) = x^2 - 2.0
+    @test isapprox(bisect(f, 0.0, 3.0, tol), sqrt(2.0), atol=tol)
 end
 
 @testset "myiseven2" begin
